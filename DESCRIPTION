@@ -1,13 +1,13 @@
 Package: ploteasyr
-Title: What the Package Does (One Line, Title Case)
+Title: Plot easily with default theme and settings (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Mengyuan",
+           family = "Zhu",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "zhumengyuan@126.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Plot easily with default theme and settings.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
