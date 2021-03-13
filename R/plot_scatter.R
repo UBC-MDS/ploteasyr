@@ -8,6 +8,11 @@
 #' @param color A categorical column.
 #' @param title An optional character variable spefified by users.
 #' @param size An optional integer variable spefified by users for the text size of all labels.
+#' 
+#' @import dplr
+#' @import ggplot2
+#' @import tidyverse
+#' @import assertthat
 #'
 #' @return A scatter plot. 
 #' @export
@@ -16,6 +21,10 @@
 #'
 #' scatter_plot(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
 
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(assertthat)
 
 scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
     if (!is.data.frame(data)) {
@@ -35,7 +44,7 @@ scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
         stop("`color` must be a categorical factor")
     }
 
-    if (!assertthat::is.string(title)) {
+    if (!is.string(title)) {
         stop("`title` must be a string")
     }
     
