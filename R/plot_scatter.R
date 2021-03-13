@@ -3,20 +3,55 @@
 #' Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
 #'
 #' @param data A data frame or a tibble.
-#' @param x A character variable.
-#' @param y A character variable.
-#' @param color A color specified by users.
+#' @param xcol A numerical column .
+#' @param ycol A numerical column.
+#' @param color A categorical column.
 #' @param title An optional character variable spefified by users.
-#' @param plot_height An optional integer variable spefified by users.
-#' @param plot_width An optional integer variable spefified by users.
-#'
+#' @param size An optional integer variable spefified by users for the text size of all labels.
+#' 
+#' @import dplr
+#' @import ggplot2
+#' @import tidyverse
+#' @import assertthat
+#' 
 #' @return A scatter plot. 
 #' @export
 #'
 #' @examples
 #'
-#' scatter_plot(mtcars, x = "Horsepower", y = "Acceleration, color = "green", title = "Horsepower vs Acceleration", plot_width=400, plot_height=400)
+#' scatter_plot(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
 
-scatter_plot <- function(data, x, y, color="green", title="Scatter plot", plot_width = 300, plot_height = 300){
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(assertthat)
+
+scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
+    if (!is.data.frame(data)) {
+        stop("`data` must be entered as a dataframe or a tibble")
+    }
+
+
+    if (!is.numeric(data %>% pull({{ xcol }}))) {
+        stop("`xcol` must be a numerical column")
+    }
+
+    if (!is.numeric(data %>% pull({{ ycol }}))) {
+        stop("`ycol` must be a numerical column")
+    }
+
+    if (!is.factor(data %>% pull({{ color }}))) {
+        stop("`color` must be a categorical factor")
+    }
+
+    if (!is.string(title)) {
+        stop("`title` must be a string")
+    }
+    
+    ggplot(data, aes(x = {{xcol}}, y = {{ycol}}, color = {{color}})) +
+      geom_point() +
+      ggtitle(title) +
+      theme(text = element_text(size = size))    
+
 }
 
