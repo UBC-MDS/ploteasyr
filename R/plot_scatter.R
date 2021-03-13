@@ -44,9 +44,13 @@ scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
         stop("`color` must be a categorical factor")
     }
 
-    if (!is.string(title)) {
-        stop("`title` must be a string")
+    if (!is.character(title)) {
+        stop("`title` must be a character")
     }
+    
+    if (!is.double(size)) {
+        stop("`size` must be a positive integer")
+  }
     
     ggplot(data, aes(x = {{xcol}}, y = {{ycol}}, color = {{color}})) +
       geom_point() +
