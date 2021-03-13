@@ -31,25 +31,25 @@ plot_hist <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   }
   
   if(!is.na(exclude)){
-    numeric_df<- input_df %>% select(-all_of(exclude)) %>% select_if(is.numeric)
+    numeric_df<- input_df %>% dplyr::select(-all_of(exclude)) %>% dplyr::select_if(is.numeric)
   }else{
-    numeric_df<- input_df %>% select_if(is.numeric)
+    numeric_df<- input_df %>% dplyr::select_if(is.numeric)
   }
   
   if(length(numeric_df) == 0){
-    warning("No column selected. An empty vector will be returned.")
+    warning::warning("No column selected. An empty vector will be returned.")
   }
-  melt_df <- melt(numeric_df)
+  melt_df <- reshape::melt(numeric_df)
   if(density){
-    plot <- ggplot(melt_df, aes(x = value))+
-      facet_wrap(~variable,scales = "free_x") + 
-      geom_density() +
-      ggtitle(title)
+    plot <- ggplot2:ggplot(melt_df, ggplot2::aes(x = value))+
+      ggplot2::facet_wrap(~variable, scales = "free_x") + 
+      ggplot2::geom_density() +
+      ggplot2::ggtitle(title)
   }else{
-    plot <- ggplot(melt_df, aes(x = value))+
-      facet_wrap(~variable,scales = "free_x") + 
-      geom_histogram() +
-      ggtitle(title)
+    plot <- ggplot2::ggplot(melt_df, ggplot2::aes(x = value))+
+      ggplot2::facet_wrap(~variable, scales = "free_x") + 
+      ggplot2::geom_histogram() +
+      ggplot2::ggtitle(title)
   }
   return(plot)
   

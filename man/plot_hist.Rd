@@ -4,7 +4,7 @@
 \alias{plot_hist}
 \title{Plot histograms for all numerical columns in the given dataframe}
 \usage{
-plot_hist(input_df, density = FALSE, exclude = c(""), title = "Histogram")
+plot_hist(input_df, density = FALSE, exclude = c(NA), title = "")
 }
 \arguments{
 \item{input_df}{The input dataframe}
@@ -22,5 +22,5 @@ ggplot2 object
 plot histograms for all numerical columns in the given data frame.
 }
 \examples{
-plot_hist(mtcars, exclude = c(""))
+plot_hist(mtcars, exclude = c())
 }
