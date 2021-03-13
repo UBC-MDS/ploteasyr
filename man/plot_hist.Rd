@@ -22,5 +22,5 @@ ggplot2 object
 plot histograms for all numerical columns in the given data frame.
 }
 \examples{
-plot_hist(mtcars, exclude = c())
+plot_hist(mtcars)
 }

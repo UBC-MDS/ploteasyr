@@ -1,3 +1,6 @@
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
 #' Plot histograms for all numerical columns in the given dataframe
 #'
 #' @description plot histograms for all numerical columns in the given data frame.
@@ -11,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' plot_hist(mtcars, exclude = c())
+#' plot_hist(mtcars)
 plot_hist <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   #Input Check
   if(!is.data.frame(input_df)){
