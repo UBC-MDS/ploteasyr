@@ -3,9 +3,9 @@
 #' Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
 #'
 #' @param data A data frame or a tibble.
-#' @param xcol A character variable.
-#' @param ycol A character variable.
-#' @param color A color specified by users.
+#' @param xcol A numerical column .
+#' @param ycol A numerical column.
+#' @param color A categorical column.
 #' @param title An optional character variable spefified by users.
 #' @param size An optional integer variable spefified by users for the text size of all labels.
 #'
