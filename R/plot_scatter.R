@@ -13,7 +13,7 @@
 #' @import ggplot2
 #' @import tidyverse
 #' @import assertthat
-#'
+#' 
 #' @return A scatter plot. 
 #' @export
 #'
@@ -52,5 +52,6 @@ scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
       geom_point() +
       ggtitle(title) +
       theme(text = element_text(size = size))    
+
 }
 
