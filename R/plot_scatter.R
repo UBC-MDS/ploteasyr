@@ -24,11 +24,11 @@ scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
 
 
     if (!is.numeric(data %>% pull({{ xcol }}))) {
-        stop("`x` must be a numerical column")
+        stop("`xcol` must be a numerical column")
     }
 
     if (!is.numeric(data %>% pull({{ ycol }}))) {
-        stop("`y` must be a numerical column")
+        stop("`ycol` must be a numerical column")
     }
 
     if (!is.factor(data %>% pull({{ color }}))) {
