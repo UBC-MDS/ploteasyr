@@ -1,10 +1,9 @@
-
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
-#' Plot bars for all numerical columns in the given dataframe
+#' Plot histograms for all numerical columns in the given dataframe
 #'
-#' @description plot bars for all numerical columns in the given data frame.
+#' @description plot histograms for all numerical columns in the given data frame.
 #'
 #' @param input_df The input dataframe
 #' @param density The boolean indicating whether or not to plot the density.
@@ -15,8 +14,8 @@ library(tidyverse)
 #' @export
 #'
 #' @examples
-#' plot_bar(mtcars)
-plot_bar function(input_df, density = FALSE, exclude = c(NA), title = ""){
+#' plot_hist(mtcars)
+plot_hist <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   #Input Check
   if(!is.data.frame(input_df)){
     stop("The 'input_df' should be a dataframe. Please check.")
@@ -57,4 +56,4 @@ plot_bar function(input_df, density = FALSE, exclude = c(NA), title = ""){
   }
   return(plot)
   
-
+}
