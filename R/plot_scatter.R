@@ -8,25 +8,25 @@
 #' @param color A categorical column.
 #' @param title An optional character variable spefified by users.
 #' @param size An optional integer variable spefified by users for the text size of all labels.
-#' 
-#' @import dplr
+#'
+#' @import dplyr
 #' @import ggplot2
 #' @import tidyverse
 #' @import assertthat
-#' 
-#' @return A scatter plot. 
+#'
+#' @return A scatter plot.
 #' @export
 #'
 #' @examples
 #'
-#' scatter_plot(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
+#' plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
 
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(assertthat)
 
-scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
+plot_scatter <- function(data, xcol, ycol, color, title=NULL, size = 20) {
     if (!is.data.frame(data)) {
         stop("`data` must be entered as a dataframe or a tibble")
     }
@@ -47,15 +47,17 @@ scatter_plot <- function(data, xcol, ycol, color, title=NULL, size = 20) {
     if (!is.character(title)) {
         stop("`title` must be a character")
     }
-    
+
     if (!is.double(size)) {
         stop("`size` must be a positive integer")
   }
-    
-    ggplot(data, aes(x = {{xcol}}, y = {{ycol}}, color = {{color}})) +
+
+    scatter_plot <- ggplot(data, aes(x = {{xcol}}, y = {{ycol}}, color = {{color}})) +
       geom_point() +
       ggtitle(title) +
-      theme(text = element_text(size = size))    
+      theme(text = element_text(size = size))
+
+    return(scatter_plot)
 
 }
 

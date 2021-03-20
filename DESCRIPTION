@@ -2,20 +2,18 @@ Package: ploteasyr
 Title: Plot easily with default theme and settings (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Mengyuan",
+    c(person(given = "Mengyuan",
            family = "Zhu",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "zhumengyuan@126.com"),
     person(given = "Jingjing",
            family = "Zhi",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "jzhi079@uottawa.ca"),
     person(given = "Fei",
            family = "Chang",
            role = c("aut", "cre"),
-           email = "fc1271@nyu.edu"))
-    )
-           
+           email = "fc1271@nyu.edu"))      
 Description: Plot easily with default theme and settings.
 License: GNU LICENSE
 Encoding: UTF-8
@@ -25,14 +23,15 @@ RoxygenNote: 7.1.1
 Imports: 
     ggplot2,
     dplyr,
+    tidyverse,
     magrittr,
     testthat,
+    assertthat,
     palmerpenguins,
     stringr,
     ggthemes,
     utils,
     covr,
-    imputeR,
     scales,
     tidyr,
     tidyselect,
