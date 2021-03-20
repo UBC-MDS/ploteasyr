@@ -5,14 +5,41 @@ Authors@R:
     person(given = "Mengyuan",
            family = "Zhu",
            role = c("aut", "cre"),
-           email = "zhumengyuan@126.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "zhumengyuan@126.com"),
+    person(given = "Jingjing",
+           family = "Zhi",
+           role = c("aut", "cre"),
+           email = "jzhi079@uottawa.ca"),
+    person(given = "Fei",
+           family = "Chang",
+           role = c("aut", "cre"),
+           email = "fc1271@nyu.edu"))
+    )
+           
 Description: Plot easily with default theme and settings.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    ggplot2,
+    dplyr,
+    magrittr,
+    testthat,
+    palmerpenguins,
+    stringr,
+    ggthemes,
+    utils,
+    covr,
+    imputeR,
+    scales,
+    tidyr,
+    tidyselect,
+    stats,
+    rlang
 Suggests: 
-    testthat (>= 2.0.0)
+    testthat (>= 3.0.0)
 Config/testthat/edition: 2
+URL: https://github.com/UBC-MDS/ploteasyr/tree/master
+BugReports: https://github.com/UBC-MDS/ploteasyr/issues
