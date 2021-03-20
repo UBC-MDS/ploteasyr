@@ -11,6 +11,11 @@ library(tidyverse)
 #' @param title The title of the histograms
 #'
 #' @return ggplot2 object
+#'
+#' @import dplyr
+#' @import ggplot2
+#' @import tidyverse
+#'
 #' @export
 #'
 #' @examples
@@ -32,28 +37,28 @@ plot_hist <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   if((!is.na(exclude)) & (!(exclude %in% colnames(input_df)))){
     stop("Excluding columns which are not present in the input dataframe. Please check.")
   }
-  
+
   if(!is.na(exclude)){
     numeric_df<- input_df %>% dplyr::select(-all_of(exclude)) %>% dplyr::select_if(is.numeric)
   }else{
     numeric_df<- input_df %>% dplyr::select_if(is.numeric)
   }
-  
+
   if(length(numeric_df) == 0){
     warning::warning("No column selected. An empty vector will be returned.")
   }
   melt_df <- reshape::melt(numeric_df)
   if(density){
     plot <- ggplot2:ggplot(melt_df, ggplot2::aes(x = value))+
-      ggplot2::facet_wrap(~variable, scales = "free_x") + 
+      ggplot2::facet_wrap(~variable, scales = "free_x") +
       ggplot2::geom_density() +
       ggplot2::ggtitle(title)
   }else{
     plot <- ggplot2::ggplot(melt_df, ggplot2::aes(x = value))+
-      ggplot2::facet_wrap(~variable, scales = "free_x") + 
+      ggplot2::facet_wrap(~variable, scales = "free_x") +
       ggplot2::geom_histogram() +
       ggplot2::ggtitle(title)
   }
   return(plot)
-  
+
 }

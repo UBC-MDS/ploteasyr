@@ -6,6 +6,3 @@ test_that("Input validation works", {
 })
 
 
-test_that("Return works", {
-  expect_true(is.ggplot(plot_hist(mtcars)))
-})

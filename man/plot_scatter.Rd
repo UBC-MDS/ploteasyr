@@ -26,5 +26,6 @@ A scatter plot.
 Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
 }
 \examples{
-plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
+plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width,
+color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
 }

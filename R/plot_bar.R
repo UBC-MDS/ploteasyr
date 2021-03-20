@@ -10,11 +10,16 @@ library(tidyverse)
 #' @param exclude The columns not to include in the output.
 #' @param title The title of the histograms
 #'
+#' @import dplyr
+#' @import ggplot2
+#' @import tidyverse
+#'
 #' @return ggplot2 object
 #' @export
 #'
 #' @examples
 #' plot_bar(mtcars)
+
 plot_bar <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   #Input Check
   if(!is.data.frame(input_df)){

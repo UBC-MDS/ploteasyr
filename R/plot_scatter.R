@@ -15,10 +15,16 @@ library(assertthat)
 #' @param size An optional integer variable spefified by users for the text size of all labels.
 #'
 #' @return A scatter plot.
+#'
+#' @import dplyr
+#' @import ggplot2
+#' @import tidyverse
+#'
 #' @export
 #'
 #' @examples
-#' plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
+#' plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width,
+#' color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
 
 plot_scatter <- function(data, xcol, ycol, color, title=NULL, size = 20) {
     if (!is.data.frame(data)) {

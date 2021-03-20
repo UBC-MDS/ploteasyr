@@ -3,3 +3,6 @@
 export(plot_bar)
 export(plot_hist)
 export(plot_scatter)
+import(dplyr)
+import(ggplot2)
+import(tidyverse)
