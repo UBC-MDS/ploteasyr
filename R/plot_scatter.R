@@ -1,6 +1,11 @@
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(assertthat)
+
 #' Scatter Plot Function
 #'
-#' Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
+#' @description Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
 #'
 #' @param data A data frame or a tibble.
 #' @param xcol A numerical column .
@@ -9,22 +14,11 @@
 #' @param title An optional character variable spefified by users.
 #' @param size An optional integer variable spefified by users for the text size of all labels.
 #'
-#' @import dplyr
-#' @import ggplot2
-#' @import tidyverse
-#' @import assertthat
-#'
 #' @return A scatter plot.
 #' @export
 #'
 #' @examples
-#'
 #' plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width, color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
-
-library(dplyr)
-library(ggplot2)
-library(tidyverse)
-library(assertthat)
 
 plot_scatter <- function(data, xcol, ycol, color, title=NULL, size = 20) {
     if (!is.data.frame(data)) {
