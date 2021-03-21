@@ -10,6 +10,9 @@
 The goal of ploteasyr is to let beginners of R have a swift plotting
 trip\!
 
+## Vignette Webpage:
+https://ubc-mds.github.io/ploteasyr/articles/ploteasyr-vignette.html
+
 ## Installation
 
 You can install the released version of ploteasyr from
