@@ -1,7 +1,7 @@
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
-library(reshape)
+
 #' Plot histograms for all numerical columns in the given dataframe
 #'
 #' @description plot histograms for all numerical columns in the given data frame.
@@ -12,7 +12,7 @@ library(reshape)
 #' @param title The title of the histograms
 #'
 #' @return ggplot2 object
-#' @import reshape
+#' @importFrom reshape melt
 #' @import dplyr
 #' @import ggplot2
 #' @import tidyverse
@@ -46,7 +46,7 @@ plot_hist <- function(input_df, density = FALSE, exclude = c(NA), title = ""){
   }
 
   if(length(numeric_df) == 0){
-    warning::warning("No column selected. An empty vector will be returned.")
+    warning("No column selected. An empty vector will be returned.")
   }
   melt_df <- reshape::melt(numeric_df)
   if(density){
