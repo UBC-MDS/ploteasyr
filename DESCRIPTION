@@ -1,5 +1,5 @@
 Package: ploteasyr
-Title: Plot easily with default theme and settings (One Line, Title Case)
+Title: Plot Easily with Default Theme and Settings (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Mengyuan",
@@ -36,6 +36,7 @@ Imports:
     tidyr,
     tidyselect,
     stats,
+    reshape,
     rlang
 Suggests: 
     testthat (>= 3.0.0)

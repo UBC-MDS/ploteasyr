@@ -2,7 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(assertthat)
-
+library(reshape)
 #' Scatter Plot Function
 #'
 #' @description Takes a dataframe and returns a scatterplot of chosen numeric features in the dataset
@@ -19,7 +19,7 @@ library(assertthat)
 #' @import dplyr
 #' @import ggplot2
 #' @import tidyverse
-#'
+#' @import reshape
 #' @export
 #'
 #' @examples

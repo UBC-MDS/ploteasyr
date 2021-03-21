@@ -1,6 +1,7 @@
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+library(reshape)
 #' Plot histograms for all numerical columns in the given dataframe
 #'
 #' @description plot histograms for all numerical columns in the given data frame.
@@ -11,7 +12,7 @@ library(tidyverse)
 #' @param title The title of the histograms
 #'
 #' @return ggplot2 object
-#'
+#' @import reshape
 #' @import dplyr
 #' @import ggplot2
 #' @import tidyverse

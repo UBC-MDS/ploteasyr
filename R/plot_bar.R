@@ -1,6 +1,7 @@
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+library(reshape)
 #' Plot bars for all numerical columns in the given dataframe
 #'
 #' @description plot bars for all numerical columns in the given data frame.
@@ -13,6 +14,7 @@ library(tidyverse)
 #' @import dplyr
 #' @import ggplot2
 #' @import tidyverse
+#' @import reshape
 #'
 #' @return ggplot2 object
 #' @export
