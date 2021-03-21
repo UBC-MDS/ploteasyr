@@ -39,7 +39,10 @@ Imports:
     stats,
     rlang
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
 Config/testthat/edition: 2
 URL: https://github.com/UBC-MDS/ploteasyr/tree/master
 BugReports: https://github.com/UBC-MDS/ploteasyr/issues
+VignetteBuilder: knitr

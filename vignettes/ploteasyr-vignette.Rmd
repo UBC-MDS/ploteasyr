@@ -1,0 +1,58 @@
+---
+title: "ploteasyr-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ploteasyr-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ploteasyr)
+```
+# Introduction
+
+The goal of ploteasyr is to let beginners of R have a swift plotting trip!
+
+---
+
+## `plot_bar` 
+
+The function is to plot bars for all numerical columns in the given dataframe.
+
+```{r, message=FALSE}
+
+plot_bar(mtcars)
+
+```
+---
+
+## `plot_hist` 
+
+The function is to plot histograms for all numerical columns in the given dataframe.
+
+```{r, message=FALSE}
+
+plot_hist(mtcars)
+
+```
+---
+## `plot_scatter` 
+
+The function is to take a dataframe and returns a scatterplot of chosen numeric features in the dataset
+
+
+```{r, message=FALSE}
+
+plot_scatter(iris, xcol = Sepal.Length, ycol = Sepal.Width,
+color = Species, title = "Sepal.Length vs Sepal.Width", size = 20)
+
+```
+---
